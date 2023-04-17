@@ -1,10 +1,20 @@
 import { ImageResponse } from '@vercel/og';
 
+import hasuraClient from '@/utils/hasuraClient';
+import profileByLoginQuery from '@/gql/profileByLogin';
+
 export const config = {
   runtime: 'edge',
 };
 
-export function GET(request: Request) {
+export async function GET(request: Request) {
+  const { token } = await fetch(`${process.env.DOMAIN}/api/jwt`).then((r) => r.json());
+  const result = await hasuraClient.setHeader('authorization', `Bearer ${token}`).request(profileByLoginQuery, {
+    login: 'maslianok',
+  });
+
+  console.log(result);
+
   return new ImageResponse(
     (
       <div
