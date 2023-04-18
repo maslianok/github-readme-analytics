@@ -1,24 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p >
+  <a href="https://nextjs.org">
+    <picture>
+      <img src="https://github.com/maslianok/github-readme-analytics/public/logo.png" height="128">
+    </picture>
+    <h1>IT Hub - Github Profile Analytics</h1>
+  </a>
+</p>
+
+IT Hub is a web application built with Next.js, Typescript and Graphql that scrapes Github profiles data to provide insightful analytics. With IT Hub, you can easily track your Github profile growth, monitor your followers, and discover what drives your popularity on Github.
+
+## Features
+
+- ⭐ Track Github profile growth
+- 🔍 Monitor followers and following count
+- 📈 Analyze repository contributions and commits
+- 😎 Discover most starred and forked repositories
+- 🦄 Visualize contribution history and languages used
+- ✨ And much more!
 
 ## Getting Started
 
-First, run the development server:
+To get started with IT Hub, simply follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Clone this repository to your local machine.
+- Install dependencies by running `npm install`.
+- Start the development server by running `npm run dev`.
+- Open the application in your browser at `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To use IT Hub, simply enter your Github username in the search bar and hit enter. The application will scrape your Github profile data and generate insightful analytics that you can use to track your progress on Github.
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+IT Hub is built with the following technologies:
+
+- Next.js
+- Typescript
+- Graphql
+- Tailwind CSS
 
 ## Learn More
 
@@ -27,10 +47,14 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/)!
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you'd like to contribute to IT Hub, please follow these steps:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Fork this repository to your Github account.
+- Create a new branch for your changes.
+- Make your changes and commit them to your branch.
+- Push your branch to your forked repository.
+- Submit a pull request to this repository.
