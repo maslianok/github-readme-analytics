@@ -1,10 +1,8 @@
-<p >
-  <a href="https://nextjs.org">
-    <picture>
-      <img src="https://github.com/maslianok/github-readme-analytics/public/logo.png" height="128">
-    </picture>
-    <h1>IT Hub - Github Profile Analytics</h1>
-  </a>
+<p>
+  <picture>
+    <img src="https://github.com/maslianok/github-readme-analytics/blob/main/public/logo.png" height="128">
+  </picture>
+  <h1>IT Hub - Github Profile Analytics</h1>
 </p>
 
 IT Hub is a web application built with Next.js, Typescript and Graphql that scrapes Github profiles data to provide insightful analytics. With IT Hub, you can easily track your Github profile growth, monitor your followers, and discover what drives your popularity on Github.
