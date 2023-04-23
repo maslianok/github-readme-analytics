@@ -1,3 +1,5 @@
+import { TrpcProvider } from "@/utils/trpc-provider";
+
 import "@/styles/reset.css";
 import "@/styles/globals.css";
 
@@ -9,7 +11,9 @@ export const metadata = {
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <TrpcProvider>{children}</TrpcProvider>
+      </body>
     </html>
   );
 }

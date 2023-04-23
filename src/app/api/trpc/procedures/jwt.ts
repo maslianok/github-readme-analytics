@@ -1,10 +1,11 @@
 import jwt from "jsonwebtoken";
-import { NextResponse } from "next/server";
+import z from "zod";
 
+import { t } from "@/trpc/trpc";
 import { env } from "@/env.mjs";
 
-export function GET() {
-  const token = jwt.sign(
+export const getJWT = async () => {
+  const res = jwt.sign(
     {
       "https://hasura.io/jwt/claims": {
         "x-hasura-default-role": "github-analytics",
@@ -14,5 +15,9 @@ export function GET() {
     env.JWT_SECRET
   );
 
-  return NextResponse.json({ token });
-}
+  const token = z.string().parse(res);
+
+  return { token };
+};
+
+export const getJWTProcedure = t.procedure.query(getJWT);
