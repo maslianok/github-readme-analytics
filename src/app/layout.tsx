@@ -17,7 +17,9 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         <TrpcProvider>
           <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
             <Header />
-            <div className="flex-1">{children}</div>
+            <div className="flex flex-1 w-full min-w-[300px] max-w-[640px] flex-col items-center justify-center text-center px-4 sm:mt-28 mt-20">
+              {children}
+            </div>
             <Footer />
           </div>
         </TrpcProvider>

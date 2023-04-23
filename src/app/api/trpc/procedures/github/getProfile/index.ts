@@ -5,6 +5,7 @@ import { getJWT } from "@/procedures/jwt";
 import hasuraClient from "@/utils/hasuraClient";
 
 import query from "./query";
+import { Profile, profile } from "./types";
 
 const input = z.object({
   login: z.string().min(0),
@@ -17,11 +18,15 @@ export const getProfile = async ({ login }: Input) => {
 
   const result = await hasuraClient
     .setHeader("authorization", `Bearer ${token}`)
-    .request(query, {
+    .request<{ profile: Profile[] }>(query, {
       login,
     });
 
-  return result;
+  const data = result?.profile?.[0];
+
+  const profileData = profile.parse(data);
+
+  return profileData;
 };
 
 export const getProfileProcedure = t.procedure

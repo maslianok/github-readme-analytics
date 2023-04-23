@@ -21,6 +21,7 @@ const query = gql`
       id
       login
       name
+      avatar
       location
       ownedRepoStar
       collaboratedRepoStar

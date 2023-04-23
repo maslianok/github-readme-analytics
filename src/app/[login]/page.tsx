@@ -1,15 +1,17 @@
 "use client";
 
+import { useParams } from "next/navigation";
 import { trpc } from "@/utils/trpc";
+import ProfileCard from "@/components/ProfileCard";
 
-interface ProfileProps {
-  params: { login: string };
-}
+const Skeleton = () => (
+  <div className="aspect-video animate-pulse relative bg-slate-50 rounded-xl overflow-hidden w-full p-4 border border-black/5" />
+);
 
-const Profile = async ({ params }: ProfileProps) => {
-  const { login } = params;
+const Profile = () => {
+  const { login } = useParams();
 
-  const profile = trpc.github.getProfile.useQuery(
+  const { data: profile, isLoading } = trpc.github.getProfile.useQuery(
     { login },
     {
       staleTime: 5 * 60 * 1000, // 5 minutes
@@ -17,7 +19,9 @@ const Profile = async ({ params }: ProfileProps) => {
     }
   );
 
-  return <div>Profile: {login}</div>;
+  if (isLoading || !profile) return <Skeleton />;
+
+  return <ProfileCard profile={profile} />;
 };
 
 export default Profile;
