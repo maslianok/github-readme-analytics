@@ -7,7 +7,7 @@ interface GithubAvatarProps {
 }
 
 const GithubAvatar: React.FC<GithubAvatarProps> = ({ avatar, alt = "" }) => (
-  <Avatar.Root className="bg-blackA3 inline-flex h-[100px] w-[100px] select-none items-center justify-center overflow-hidden rounded-full align-middle">
+  <Avatar.Root className="bg-blackA3 inline-flex h-[120px] w-[120px] select-none items-center justify-center overflow-hidden rounded-full align-middle">
     <Avatar.Image
       className="h-full w-full rounded-[inherit] object-cover"
       src={avatar}
