@@ -18,7 +18,7 @@ const Home = () => (
       <span className={geadient}>Analytics</span> ✨
     </h1>
 
-    <p className="mx-auto mt-12 max-w-xl text-lg text-slate-700 leading-7">
+    <p className="mx-auto mt-6 sm:mt-12 max-w-xl text-lg text-slate-700 leading-7">
       Want to make your Github profile stand out? Customize your appearance with
       our free custom personalized analytics widget.
     </p>

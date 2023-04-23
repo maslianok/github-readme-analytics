@@ -23,18 +23,21 @@ const LoginInput = () => {
   );
 
   return (
-    <form className="flex justify-center space-x-2" onSubmit={handleSubmit}>
+    <form
+      className="flex items-stretch justify-center flex-col sm:flex-row sm:items-center sm:mt-10 mt-8 gap-2"
+      onSubmit={handleSubmit}
+    >
       <input
         type="text"
         name="username"
-        className="bg-white rounded-xl text-black font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-gray-100 border"
+        className="bg-white rounded-xl text-black font-medium px-4 py-3 hover:bg-gray-100 border"
         placeholder="Your GitHub Username"
         required
       />
 
       <button
         type="submit"
-        className="bg-black rounded-xl text-white font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-black/80 flex items-center gap-1"
+        className="bg-black rounded-xl text-white font-medium px-4 py-3 hover:bg-black/80 flex items-center justify-center gap-1"
       >
         Generate Analytics
         <HiChevronRight size={20} />
