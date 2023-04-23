@@ -2,6 +2,8 @@ import { TrpcProvider } from "@/utils/trpc-provider";
 
 import "@/styles/reset.css";
 import "@/styles/globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "IT Hub | Github Profile Analytics",
@@ -12,7 +14,13 @@ function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <TrpcProvider>{children}</TrpcProvider>
+        <TrpcProvider>
+          <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
+            <Header />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </div>
+        </TrpcProvider>
       </body>
     </html>
   );
