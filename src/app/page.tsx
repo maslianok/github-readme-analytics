@@ -3,7 +3,7 @@ import LoginInput from "@/components/LoginInput";
 const geadient = `bg-clip-text text-transparent bg-gradient-to-r from-[#20BF55] to-[#01BAEF]`;
 
 const Home = () => (
-  <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 sm:mt-28 mt-20">
+  <main className="flex w-full flex-col items-center justify-center text-center">
     <a
       href="https://twitter.com/nutlope/status/1626074563481051136"
       target="_blank"
