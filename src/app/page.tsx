@@ -13,7 +13,7 @@ const Home = () => (
       Simple and Slick analytics widget
     </a>
 
-    <h1 className="mx-auto max-w-4xl text-5xl font-bold text-slate-900 sm:text-7xl">
+    <h1 className="mx-auto max-w-4xl text-5xl font-bold text-slate-900 sm:text-7xl tracking-tight">
       Flex Your <span className={geadient}>Github</span> Profile Stats and{" "}
       <span className={geadient}>Analytics</span> ✨
     </h1>
