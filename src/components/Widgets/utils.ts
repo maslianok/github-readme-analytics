@@ -2,8 +2,13 @@ import {
   tileGap as defaultTileGap,
   tileSize as defaultTileSize,
 } from "./constants";
-import { themes } from "./themes";
-import type { Size, Step, Theme } from "./types";
+import type { Size } from "./types";
+
+// Satori requires `tw` to render styles, so we need to duplicate className to tw
+export const tw = (className: string) => ({
+  tw: className,
+  className,
+});
 
 export const getCardSize = (
   size: Size,
@@ -35,13 +40,6 @@ export const getCardSize = (
   }
 };
 
-// TODO: Maybe, there is an easier way?
-export const getColor = (theme: Theme, step: Step): string => {
-  const colors = themes[theme];
-  const key = `${theme.replace(/Dark&/gm, "")}${step}` as keyof typeof colors;
-  return colors[key] as string;
-};
-
 export const formatRating = (num: number) =>
   "#" +
   new Intl.NumberFormat("en-US", {
@@ -55,3 +53,26 @@ export const formatPercent = (num: number) =>
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
   }).format(num / 100);
+
+export const formatLargeNumber = (number: number): string => {
+  const abbreviations = ["", "k", "m", "b", "t"];
+  const sign = Math.sign(number);
+  let absNumber = Math.abs(number);
+  let abbreviationIndex = 0;
+
+  while (absNumber >= 1000 && abbreviationIndex < abbreviations.length - 1) {
+    absNumber /= 1000;
+    abbreviationIndex++;
+  }
+
+  const formattedNumber = absNumber.toFixed(1).replace(/\.?0+$/, ""); // Trim trailing zeros
+  const signPrefix = sign === -1 ? "-" : "";
+
+  return signPrefix + formattedNumber + abbreviations[abbreviationIndex];
+};
+
+export const textStrokeShadow = (width: number, color: string) =>
+  `0 0 ${width}px ${color},
+ 0 0 ${width}px ${color},
+ 0 0 ${width}px ${color},
+ 0 0 ${width}px ${color}`;

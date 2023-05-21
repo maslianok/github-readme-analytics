@@ -20,8 +20,7 @@
       }
     ],
     "paths": {
-      "@/trpc/*": ["./src/app/api/trpc/*"],
-      "@/procedures/*": ["./src/app/api/trpc/procedures/*"],
+      "@/widgets/*": ["./src/components/widgets/*"],
       "@/*": ["./src/*"]
     }
   },
