@@ -35,7 +35,7 @@ const List: React.FC<ListProps> = ({ theme = "gray", items }) => {
             </span>
             <span {...tw("whitespace-nowrap text-ellipsis")}>{item.label}</span>
           </span>
-          <span>{formatLargeNumber(item.value)}</span>
+          <span {...tw("min-w-[36px]")}>{formatLargeNumber(item.value)}</span>
         </li>
       ))}
     </ul>

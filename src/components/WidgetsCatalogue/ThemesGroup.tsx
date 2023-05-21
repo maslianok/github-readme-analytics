@@ -6,7 +6,7 @@ import * as RadioGroup from "@radix-ui/react-radio-group";
 import { themes } from "@/widgets/themes";
 import type { Step, Theme } from "@/widgets/types";
 
-import styles from "./styles.module.scss"
+import styles from "./styles.module.scss";
 
 const format = (input: string) =>
   input
@@ -26,9 +26,9 @@ const ThemesGroup: React.FC<ThemesGroupProps> = ({
   themes: themesGroup,
   steps = [4, 7, 11],
 }) => (
-  <div className="flex flex-col gap-3 items-start">
-    <h4 className="text-lg font-semibold">{label}</h4>
-    <ul className="flex flex-wrap items-start gap-2.5">
+  <div>
+    <h4 className="text-lg font-semibold mb-4">{label}</h4>
+    <ul className="flex flex-wrap items-start gap-2">
       {themesGroup.map((theme) => (
         <li key={theme}>
           <RadioGroup.Item

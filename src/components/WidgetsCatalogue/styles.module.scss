@@ -10,10 +10,14 @@
   @media (min-width: 840px) {
     max-width: calc(4 * var(--tile-width) + 3 * var(--gap));
   }
+
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .grid {
-  margin: 20px auto;
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
@@ -22,6 +26,7 @@
   grid-auto-flow: dense;
   gap: var(--gap);
   overflow: hidden;
+  width: 100%;
 
   & > li:has(> [data-size="wide"]) {
     grid-column: span 2;

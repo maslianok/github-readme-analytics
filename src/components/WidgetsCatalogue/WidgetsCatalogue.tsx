@@ -23,18 +23,18 @@ const widgets: {
 }[] = [
   { id: "stats", widget: Stats, size: "wide", href: "" },
 
-  { id: "Contributions", widget: Contributions, size: "small", href: "" },
-  { id: "Contributions", widget: Contributions, size: "wide", href: "" },
+  { id: "contributions-1", widget: Contributions, size: "small", href: "" },
+  { id: "contributions-2", widget: Contributions, size: "wide", href: "" },
 
-  { id: "Ranking", widget: Ranking, size: "small", href: "" },
+  { id: "ranking", widget: Ranking, size: "small", href: "" },
   // { id: "Ranking", widget: Ranking, size: "wide", href: "" },
   // { id: "Ranking", widget: Ranking, size: "narrow", href: "" },
   // { id: "Ranking", widget: Ranking, size: "large", href: "" },
 
-  { id: "Rating", widget: Rating, size: "small", href: "" },
+  { id: "rating", widget: Rating, size: "small", href: "" },
 
-  { id: "StarsEarned", widget: StarsEarned, size: "small", href: "" },
-  { id: "StarsEarned", widget: StarsEarned, size: "wide", href: "" },
+  { id: "stars-earned-1", widget: StarsEarned, size: "small", href: "" },
+  { id: "stars-earned-2", widget: StarsEarned, size: "wide", href: "" },
 
   // { id: "Streak", widget: Streak, size: "small", href: "" },
   // { id: "Streak", widget: Streak, size: "wide", href: "" },
@@ -52,6 +52,9 @@ const WidgetsCatalogue: React.FC<WidgetsCatalogueProps> = ({
   return (
     <div className={styles.container}>
       <ThemeSelector theme={theme} setTheme={setTheme} />
+
+      <hr />
+
       <ul className={styles.grid}>
         {widgets.map((widget) => (
           <li key={widget.id}>

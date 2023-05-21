@@ -14,7 +14,7 @@ const StarsEarned: React.FC<StarsEarnedProps> = ({
   rounded = true,
   border = true,
 }) => {
-  const stars = 0;
+  const { ownedRepoStar: stars } = githubProfile;
 
   const starColor = stars > 0 ? themes["yellow"][10] : themes[theme][6];
 

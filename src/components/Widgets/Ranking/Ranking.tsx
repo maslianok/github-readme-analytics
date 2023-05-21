@@ -12,6 +12,8 @@ const Ranking: React.FC<RankingProps> = ({
   rounded = true,
   border = true,
 }) => {
+  const { countryRanks } = githubProfile;
+
   const {
     rating,
     beats,

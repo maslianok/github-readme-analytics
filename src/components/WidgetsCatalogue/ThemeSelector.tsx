@@ -61,7 +61,7 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = ({ theme, setTheme }) => {
       value={theme}
       onValueChange={(newTheme: Theme) => setTheme(newTheme)}
       aria-label="Select Widgets Theme"
-      className="grid grid-cols-1 md:grid-cols-2 my-4 gap-5 text-left"
+      className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left"
     >
       <Group label="Light" groups={groups} />
       <Group label="Dark" groups={darkGroups} />

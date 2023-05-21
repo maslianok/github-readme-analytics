@@ -22,9 +22,11 @@ const Stats: React.FC<StatsProps> = ({
   rounded = true,
   border = true,
 }) => {
+  const { ownedRepoStar: stars } = githubProfile;
+
   const items: ListItem[] = [
     { icon: <BookOpenIcon />, label: "Total Repo", value: 52 },
-    { icon: <StarIcon />, label: "Stars Earned", value: 58130 },
+    { icon: <StarIcon />, label: "Stars Earned", value: stars },
     { icon: <RocketLaunchIcon />, label: "2023 Commits", value: 99 },
     { icon: <ShareIcon />, label: "Total PRs", value: 727 },
     { icon: <InformationCircleIcon />, label: "Total Issues", value: 147 },
@@ -41,7 +43,10 @@ const Stats: React.FC<StatsProps> = ({
             )}
           >
             <h4 {...tw("font-bold")}>{githubProfile.name}</h4>
-            <h5 {...tw("text-xs transition")} style={{ color: themes[theme][11] }}>
+            <h5
+              {...tw("text-xs transition")}
+              style={{ color: themes[theme][11] }}
+            >
               {githubProfile.login}
             </h5>
           </div>
