@@ -32,7 +32,7 @@ const ThemesGroup: React.FC<ThemesGroupProps> = ({
       {themesGroup.map((theme) => (
         <li key={theme}>
           <RadioGroup.Item
-            className={styles.item}
+            className={styles["theme-item"]}
             style={{
               background: themes[theme][steps[0]],
               borderColor: themes[theme][steps[1]],

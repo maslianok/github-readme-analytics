@@ -10,7 +10,7 @@ interface CardProps {
   border?: boolean;
 }
 
-const Widget: React.FC<CardProps> = ({
+const Card: React.FC<CardProps> = ({
   size = "small",
   theme = "gray",
   children,
@@ -19,7 +19,8 @@ const Widget: React.FC<CardProps> = ({
 }) => {
   const { height, width } = getCardSize(size);
 
-  let className = "flex relative p-6 text-left leading-tight transition";
+  let className =
+    "flex relative p-6 text-left leading-tight transition overflow-hidden";
 
   if (rounded) className += " rounded-3xl";
   if (border) className += " border";
@@ -27,6 +28,7 @@ const Widget: React.FC<CardProps> = ({
   return (
     <div
       {...tw(className)}
+      data-widget
       data-size={size}
       style={{
         backgroundColor: themes[theme][1],
@@ -41,4 +43,4 @@ const Widget: React.FC<CardProps> = ({
   );
 };
 
-export default Widget;
+export default Card;

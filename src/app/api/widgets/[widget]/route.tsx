@@ -3,7 +3,7 @@ import z from "zod";
 
 import { fetchGoogleFont } from "@/utils/font";
 
-import Rating from "@/widgets/Rating";
+import widgets from "@/widgets/widgets";
 import { getCardSize } from "@/widgets/utils";
 import { getProfile } from "@/server/routers/github/getProfile";
 
@@ -12,8 +12,20 @@ import { getWidgetParams } from "../utils";
 
 const font = fetchGoogleFont("Montserrat").then((res) => res.arrayBuffer());
 
-export async function GET(request: Request) {
+export async function GET(
+  request: Request,
+  options: {
+    params: { widget: string };
+  }
+) {
   const { searchParams } = new URL(request.url);
+  const { widget } = options.params;
+
+  const Widget = widgets[widget];
+
+  if (!Widget) {
+    return NextResponse.json({ message: "Widget not found" }, { status: 404 });
+  }
 
   let params: ReturnType<typeof getWidgetParams>;
 
@@ -49,7 +61,7 @@ export async function GET(request: Request) {
   const montserrat = await font;
 
   const html = (
-    <Rating
+    <Widget
       githubProfile={githubProfile}
       size={size}
       theme={theme}
@@ -70,3 +82,10 @@ export async function GET(request: Request) {
     ],
   });
 }
+
+export const generateStaticParams = () =>
+  Object.keys(widgets).map((widget) => ({
+    slug: widget,
+  }));
+
+export const dynamicParams = false;

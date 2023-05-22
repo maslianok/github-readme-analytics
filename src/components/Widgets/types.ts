@@ -74,7 +74,9 @@ export const theme = z.enum([
 
 export type Theme = z.infer<typeof theme>;
 
-export const size = z.enum(["small", "wide", "narrow", "large"]);
+export const sizes = ["small", "wide", "narrow", "large"] as const;
+
+export const size = z.enum(sizes);
 
 export type Size = z.infer<typeof size>;
 

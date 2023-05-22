@@ -7,7 +7,6 @@ export const env = createEnv({
    * Will throw if you access these variables on the client.
    */
   server: {
-    DOMAIN: z.string(),
     JWT_SECRET: z.string(),
   },
   /*
@@ -16,7 +15,7 @@ export const env = createEnv({
    * 💡 You'll get typeerrors if these are not prefixed with NEXT_PUBLIC_.
    */
   client: {
-    // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
+    NEXT_PUBLIC_SITE_URL: z.string(),
   },
   /*
    * Due to how Next.js bundles environment variables on Edge and Client,
@@ -25,8 +24,7 @@ export const env = createEnv({
    * 💡 You'll get typeerrors if not all variables from `server` & `client` are included here.
    */
   runtimeEnv: {
-    DOMAIN: process.env.DOMAIN,
     JWT_SECRET: process.env.JWT_SECRET,
-    // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
   },
 });

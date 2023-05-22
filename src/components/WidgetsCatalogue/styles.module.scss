@@ -25,24 +25,36 @@
   );
   grid-auto-flow: dense;
   gap: var(--gap);
-  overflow: hidden;
   width: 100%;
 
-  & > li:has(> [data-size="wide"]) {
-    grid-column: span 2;
+  // Hide empty cells
+  & > li:not(:has([data-widget])) {
+    display: none;
   }
 
-  & > li:has(> [data-size="narrow"]) {
+  // Inherit inner widget size
+  & > li:has([data-widget][data-size="small"]) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  & > li:has([data-widget][data-size="wide"]) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  & > li:has([data-widget][data-size="narrow"]) {
+    grid-column: span 1;
     grid-row: span 2;
   }
 
-  & > li:has(> [data-size="large"]) {
+  & > li:has([data-widget][data-size="large"]) {
     grid-column: span 2;
     grid-row: span 2;
   }
 }
 
-.item {
+.theme-item {
   display: flex;
   align-items: center;
   justify-content: center;
