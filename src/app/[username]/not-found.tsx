@@ -1,21 +1,23 @@
 import Image from "next/image";
-import Link from "next/link";
+import LoginInput from "@/components/LoginInput";
 
 import Octobiwan from "@/../public/octobiwan.svg";
 
-const NotFound = () => {
-  return (
-    <div>
-      <Image src={Octobiwan} alt="Github Octocat" width={200} />
+const NotFound = () => (
+  <div className="mx-auto max-w-md flex flex-col items-center justify-center">
+    <Image className="mb-6" src={Octobiwan} alt="Github Octocat" width={200} />
 
-      <h2 className="mx-auto max-w-4xl text-5xl font-bold text-slate-900 sm:text-7xl tracking-tight">
-        Not Found
-      </h2>
-      <p>Could not find profile with given username</p>
+    <h2 className="text-2xl font-bold sm:text-4xl tracking-tight mb-2">
+      User not Found
+    </h2>
 
-      <Link href="/">Go to main page</Link>
-    </div>
-  );
-};
+    <p>
+      No user with this username was found. Check the entered username for
+      typos, possibly.
+    </p>
+
+    <LoginInput />
+  </div>
+);
 
 export default NotFound;

@@ -1,11 +1,14 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { HiChevronRight } from "react-icons/hi2";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 const LoginInput = () => {
   const router = useRouter();
+  const params = useParams();
+
+  const [username, setUsername] = useState(params.username || "");
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = useCallback(
     (e) => {
@@ -24,20 +27,22 @@ const LoginInput = () => {
 
   return (
     <form
-      className="flex items-stretch justify-center flex-col sm:flex-row sm:items-center sm:mt-10 mt-8 gap-2"
+      className="flex items-stretch justify-center flex-col sm:flex-row sm:items-center mt-6 gap-2"
       onSubmit={handleSubmit}
     >
       <input
         type="text"
         name="username"
-        className="bg-white rounded-xl text-black font-medium px-4 py-3 hover:bg-gray-100 border"
+        className="bg-white rounded-xl text-black font-medium px-4 py-3 hover:bg-gray-100 border flex-auto"
         placeholder="Your GitHub Username"
         required
+        value={username}
+        onChange={(e) => setUsername(e.currentTarget.value)}
       />
 
       <button
         type="submit"
-        className="bg-black rounded-xl text-white font-medium px-4 py-3 hover:bg-black/80 flex items-center justify-center gap-1"
+        className="bg-black rounded-xl text-white font-medium px-4 py-3 hover:bg-black/80 flex items-center justify-center gap-1 whitespace-nowrap flex-auto"
       >
         Generate Analytics
         <HiChevronRight size={20} />
